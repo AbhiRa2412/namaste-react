@@ -1,0 +1,24 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "This is Namaste React by Akshay Saini",
+  "main": "App.js",
+  "scripts": {
+    "test": "zest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AbhiRa2412/namaster-react.git#main"
+  },
+  "keywords": [
+    "akshay",
+    "react",
+    "saini"
+  ],
+  "author": "Akshay Saini",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AbhiRa2412/namaster-react/issues"
+  },
+  "homepage": "https://github.com/AbhiRa2412/namaster-react/tree/main#readme"
+}
