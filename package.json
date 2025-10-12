@@ -2,23 +2,30 @@
   "name": "react",
   "version": "1.0.0",
   "description": "This is Namaste React by Akshay Saini",
-  "main": "App.js",
   "scripts": {
-    "test": "zest"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AbhiRa2412/namaster-react.git#main"
+    "url": "git+https://github.com/AbhiRa2412/namaste-react.git#main"
   },
-  "keywords": [
-    "akshay",
-    "react",
-    "saini"
-  ],
+  "keywords": [],
   "author": "Akshay Saini",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/AbhiRa2412/namaster-react/issues"
+    "url": "https://github.com/AbhiRa2412/namaste-react/issues"
   },
-  "homepage": "https://github.com/AbhiRa2412/namaster-react/tree/main#readme"
+  "homepage": "https://github.com/AbhiRa2412/namaste-react/tree/main#readme",
+  "devDependencies": {
+    "parcel": "^2.16.0"
+  },
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+
+"browserslist":[
+  "last 2 chrome versions",
+  "last 2 firefox versions"
+]
 }
