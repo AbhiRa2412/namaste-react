@@ -85,5 +85,13 @@ const appRouter = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 // root.render(<AppLayout />);
 root.render(
-  <RouterProvider future={{ v7_startTransition: true }} router={appRouter} />
+  <RouterProvider
+    future={
+      ({ v7_startTransition: true },
+      {
+        v7_relativeSplatPath: true,
+      })
+    }
+    router={appRouter}
+  />
 );

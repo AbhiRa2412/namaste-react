@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withPromtedLabel } from "./RestaurantCard";
 import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import resList from "../utils/mockData";
@@ -13,9 +13,14 @@ const Body = () => {
   // const [filterRes, setFilterRes] = useState(resList);
   //onload passing empty array mock data is not needed to show
   //local state variable  =>. rerenders the component (aka reconcilation cycle)
+
   const [filterRes, setFilterRes] = useState([]);
+
   const [filterListOfResturant, setFilterListOfResturant] = useState([]);
+
   const [searchText, setSearchText] = useState("");
+
+  const RestaurantCardPromoted = withPromtedLabel(RestaurantCard);
 
   const { loggedInUser, setUserName } = useContext(UserContext);
 
@@ -28,7 +33,7 @@ const Body = () => {
   const fetchData = async () => {
     const data = await fetch(CDN_URL + "listRestaurants");
     const jsonData = await data.json();
-    console.log(jsonData);
+    // console.log(jsonData);
     // optional chaining
     setFilterRes(
       jsonData?.data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
@@ -52,6 +57,7 @@ const Body = () => {
 
   //Conditional Rendering
   // console.log(resList);
+
   return filterRes.length === 0 ? (
     <Shimmer />
   ) : (
@@ -60,6 +66,7 @@ const Body = () => {
         <div className="search m-2 p-4">
           <input
             type="text"
+            data-testid="searchInput"
             className="border border-black border-solid"
             value={searchText}
             onChange={handleInputChange}
@@ -70,7 +77,7 @@ const Body = () => {
               const fitlerResult = filterRes.filter((res) =>
                 res.info.name.toLowerCase().includes(searchText.toLowerCase())
               );
-              console.log(fitlerResult);
+              // console.log(fitlerResult);
               setFilterListOfResturant(fitlerResult);
             }}
           >
@@ -81,7 +88,7 @@ const Body = () => {
           <button
             className="px-2 py-2 bg-gray-100 rounded-lg"
             onClick={() => {
-              console.log(filterRes);
+              // console.log(filterRes);
               const listOfFilter = filterRes.filter(
                 (res) => res.info.avgRating > 4.5
               );
@@ -109,7 +116,11 @@ const Body = () => {
             key={restaurant?.info.id}
             to={"/restaurants/" + restaurant?.info.id}
           >
-            <RestaurantCard restaurantData={restaurant?.info} />
+            {restaurant?.info.promoted ? (
+              <RestaurantCardPromoted restaurantData={restaurant?.info} />
+            ) : (
+              <RestaurantCard restaurantData={restaurant?.info} />
+            )}
           </Link>
         ))}
       </div>

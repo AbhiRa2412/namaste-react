@@ -3,7 +3,7 @@ import { CDN_URL } from "../utils/constants";
 import UserContext from "../utils/UserContext";
 
 const RestaurantCard = (props) => {
-  console.log(props);
+  // console.log(props);
 
   const { restaurantData } = props;
 
@@ -19,7 +19,7 @@ const RestaurantCard = (props) => {
     restaurantData;
   return (
     // <div className="res-card m-4 p-4 w-[200px] rounded-lg bg-gray-100 hover:bg-gray-200" style={styleCard}>
-    <div className="res-card m-4 p-4 w-[250px] rounded-lg bg-gray-100 hover:bg-gray-200">
+    <div data-testid = "resCard" className="res-card m-4 p-4 w-[250px] rounded-lg bg-gray-100 hover:bg-gray-200">
       {/* <img
         src={CDN_URL + cloudinaryImageId}
         alt="res-logo"
