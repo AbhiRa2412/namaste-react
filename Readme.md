@@ -10,3 +10,24 @@ Namaste React
 -Bundle
 -Minification
 -Compressing
+
+
+//Food Ordering App Manifest
+
+/* Header
+    Logo
+  Navbar
+    Home
+    Aboutus
+    Contact
+    Cart
+Body
+  Searchbar
+  RestaurentContainer
+
+Footer
+  copyright
+  links
+  address
+
+*/
