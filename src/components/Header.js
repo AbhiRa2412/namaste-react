@@ -59,6 +59,7 @@ const Header = () => {
             </button>
           </li>
           <li className="px-4">{loggedInUser}</li>
+          
         </ul>
       </nav>
     </div>
